@@ -1,0 +1,15 @@
+server:
+  port: 8080
+
+weather:
+  api:
+    key: ${OPEN_WEATHER_MAP_API_KEY}
+
+spring:
+  application:
+    name: weather-tracker
+
+  logging:
+    level:
+      root: INFO
+      com.smansu4.weathertracker: DEBUG
