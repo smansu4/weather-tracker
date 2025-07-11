@@ -1,15 +1,22 @@
 server:
-  port: 8080
+  port: 5000
 
 weather:
   api:
-    key: ${OPEN_WEATHER_MAP_API_KEY}
+    key: ${OPEN_WEATHER_MAP_API_KEY:}
 
 spring:
   application:
     name: weather-tracker
 
-  logging:
-    level:
-      root: INFO
-      com.smansu4.weathertracker: DEBUG
+# Configure Spring to write to the `/var/log/web.log` file
+logging:
+  level:
+    root: INFO
+    com.smansu4.weathertracker: DEBUG
+
+  file:
+    name: /var/log/web.log
+
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level %logger{36} - %msg%n"
